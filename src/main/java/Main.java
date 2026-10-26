@@ -8,16 +8,38 @@ public class Main
   public static void main(String[] args) {
     Scanner scanner = new Scanner(System.in);
     
+    System.out.println("Co wykonać: (1 - suma, 2 - różnica, 3- iloczyn, 4 - iloraz) ");
+    int wykonanie = scanner.nextInt();
+
     System.out.println("Podaj pierwsze: ");
-    int a = scanner.nextInt();
+    double a = scanner.nextDouble();
 
     System.out.println("Podaj drugie: ");
-    int b = scanner.nextInt();
+    double b = scanner.nextDouble();
 
-    int wynik;
-    wynik = a+b;
-
-    System.out.println("Suma to "+ wynik);
+    switch (wykonanie)
+      {
+        case 1:
+          System.out.println("Wynik to: " + (a + b));
+          break;
+          case 2:
+          System.out.println("Wynik to: " + (a - b));
+          break;
+          case 3:
+          System.out.println("Wynik to: "+ (a * b));
+          break;
+          case 4:
+          if (b == 0) {
+            System.out.println("Błąd! Zakaz dzielenia przez zero");
+          }
+          else
+          {
+            System.out.println("Wynik to: "+ (a / b));
+          }
+          break;
+        default:
+          System.out.println("Brak opcji");
+      }
   }
 
   // @Test
